@@ -3,11 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 const detailsBgDecoration = BoxDecoration(
   color: Colors.transparent,
-  image: DecorationImage(
-    fit: BoxFit.fill,
-    image: AssetImage(
-      'assets/images/night.jpeg',
-    ),
+  gradient: LinearGradient(
+    begin: FractionalOffset.topCenter,
+    end: FractionalOffset.bottomCenter,
+    colors: [
+      Color.fromARGB(137, 8, 233, 253),
+      Color.fromARGB(115, 1, 61, 125),
+    ],
+    stops: [0.0, 0.5],
   ),
 );
 
@@ -17,8 +20,8 @@ final detailsBgDecorationWithGradient = BoxDecoration(
     begin: FractionalOffset.topCenter,
     end: FractionalOffset.bottomCenter,
     colors: [
-      Colors.black54.withOpacity(0.0),
-      Colors.black45,
+      const Color.fromARGB(137, 0, 49, 75).withOpacity(0.0),
+      const Color.fromARGB(115, 70, 188, 235),
     ],
     stops: const [0.0, 0.5],
   ),

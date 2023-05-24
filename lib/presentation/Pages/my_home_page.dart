@@ -20,16 +20,6 @@ class MyHomePage extends HookConsumerWidget {
     return Stack(
       children: [
         Positioned(
-          child: SizedBox(
-            width: double.infinity,
-            height: context.height / 2,
-            child: Image.asset(
-              'assets/images/day.webp',
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        Positioned(
           bottom: 0,
           right: 0,
           child: Container(
@@ -40,7 +30,7 @@ class MyHomePage extends HookConsumerWidget {
         ),
         Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.black54,
+          backgroundColor: const Color.fromARGB(255, 1, 13, 65),
           body: RefreshIndicator(
             onRefresh: () async {
               return await ref
@@ -59,7 +49,7 @@ class MyHomePage extends HookConsumerWidget {
                     children: [
                       SizedBox(height: context.height * 0.10),
                       Text(
-                        "Hello there!",
+                        "Hi there",
                         style: GoogleFonts.raleway(
                             fontSize: 32, color: Colors.white),
                       ),
