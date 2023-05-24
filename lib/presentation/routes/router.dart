@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:weather/presentation/Pages/DetailsPage.dart';
-import 'package:weather/presentation/Pages/MyHomePage.dart';
+import 'package:weather/presentation/Pages/details_page.dart';
+import 'package:weather/presentation/Pages/my_home_page.dart';
 
 @MaterialAutoRouter(
   routes: <AutoRoute>[

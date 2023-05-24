@@ -20,7 +20,7 @@ class MyHomePage extends HookConsumerWidget {
     return Stack(
       children: [
         Positioned(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: context.height / 2,
             child: Image.asset(
@@ -72,7 +72,7 @@ class MyHomePage extends HookConsumerWidget {
                       const SizedBox(height: 20),
                       TextField(
                         controller: cityNameController,
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                         decoration: inputDecoration.copyWith(
                           suffixIcon: IconButton(
                             onPressed: () {
@@ -81,11 +81,11 @@ class MyHomePage extends HookConsumerWidget {
                                   cityNameController.text;
                               WidgetsBinding.instance.addPostFrameCallback((_) {
                                 context.router.push(
-                                  DetailsPageRoute(),
+                                  const DetailsPageRoute(),
                                 );
                               });
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.search,
                               color: Colors.white,
                             ),
@@ -93,7 +93,7 @@ class MyHomePage extends HookConsumerWidget {
                         ),
                       ),
                       SizedBox(height: context.height * 0.2),
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -105,15 +105,15 @@ class MyHomePage extends HookConsumerWidget {
                                   fontSize: 16, color: Colors.white),
                             ),
                             locationState.maybeWhen(
-                              loading: () => CircularProgressIndicator(),
+                              loading: () => const CircularProgressIndicator(),
                               data: (cityName) {
                                 return BuildSucessLocation(cityName: cityName);
                               },
                               failed: (e) => Text(
                                 e.toString(),
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                               ),
-                              orElse: () => CircularProgressIndicator(),
+                              orElse: () => const CircularProgressIndicator(),
                             ),
                           ],
                         ),

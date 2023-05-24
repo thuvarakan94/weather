@@ -14,7 +14,7 @@ class LocationStateNotifer
 
   Future<void> getMyLocation() async {
     try {
-      state = ApiRequestState.loading();
+      state = const ApiRequestState.loading();
       Position data = await locationRepository.getCoordinates();
       Placemark place = await locationRepository.getLocationName(
           data.latitude, data.longitude);

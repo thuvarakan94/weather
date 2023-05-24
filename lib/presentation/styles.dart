@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-final detailsBgDecoration = BoxDecoration(
+const detailsBgDecoration = BoxDecoration(
   color: Colors.transparent,
   image: DecorationImage(
     fit: BoxFit.fill,
@@ -20,14 +20,14 @@ final detailsBgDecorationWithGradient = BoxDecoration(
       Colors.black54.withOpacity(0.0),
       Colors.black45,
     ],
-    stops: [0.0, 0.5],
+    stops: const [0.0, 0.5],
   ),
 );
 
 final backButtonDecoration = BoxDecoration(
-  color: Color(0xffe0e0e0),
+  color: const Color(0xffe0e0e0),
   boxShadow: backBtnBoxShadow,
-  borderRadius: BorderRadius.all(
+  borderRadius: const BorderRadius.all(
     Radius.circular(10),
   ),
 );
@@ -53,12 +53,12 @@ TextStyle bigTitleStyle =
 
 List<BoxShadow> backBtnBoxShadow = [
   BoxShadow(
-    color: Color(0xffc3c3c3).withOpacity(0.4),
+    color: const Color(0xffc3c3c3).withOpacity(0.4),
     spreadRadius: 15,
     blurRadius: 30,
-    offset: Offset(-20, 20), // changes position of shadow
+    offset: const Offset(-20, 20), // changes position of shadow
   ),
-  BoxShadow(
+  const BoxShadow(
     color: nightBackgroundColor,
     spreadRadius: 15,
     blurRadius: 30,

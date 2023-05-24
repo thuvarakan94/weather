@@ -12,19 +12,19 @@ class WeatherStateNotifer
   WeatherStateNotifer(
     this.weatherRepository,
     this.cityName,
-  ) : super(ApiRequestState.idle()) {
+  ) : super(const ApiRequestState.idle()) {
     getWeather(cityName);
   }
 
   Future<void> getWeather(String cityName) async {
     try {
-      state = ApiRequestState.loading();
+      state = const ApiRequestState.loading();
       var data = await weatherRepository.getWeather(cityName);
       state = ApiRequestState<WeatherData, String>.data(data: data);
     } on NetworkException catch (e) {
-      print(e.toString());
+      // print(e.toString());
       state = ApiRequestState.failed(
-        reason: "${e.message}",
+        reason: e.message,
       );
     }
   }

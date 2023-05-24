@@ -47,7 +47,7 @@ class DetailsPage extends ConsumerWidget {
                   child: Container(
                     height: 40,
                     width: 40,
-                    padding: EdgeInsets.only(left: 4),
+                    padding: const EdgeInsets.only(left: 4),
                     decoration: backButtonDecoration,
                     child: IconButton(
                       onPressed: () {
@@ -56,16 +56,16 @@ class DetailsPage extends ConsumerWidget {
                           Navigator.pop(context);
                         });
                       },
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: const Icon(Icons.arrow_back_ios),
                     ),
                   ),
                 ),
                 Positioned(
                   child: weatherState.maybeWhen(
-                    loading: () => Center(
+                    loading: () => const Center(
                       child: CircularProgressIndicator(),
                     ),
-                    data: (data) => Container(
+                    data: (data) => SizedBox(
                       width: context.width,
                       height: context.height / 2.0,
                       child: BuildSuccessInformation(
@@ -75,7 +75,7 @@ class DetailsPage extends ConsumerWidget {
                     ),
                     failed: (e) {
                       return Container(
-                        margin: EdgeInsets.only(top: 140),
+                        margin: const EdgeInsets.only(top: 140),
                         alignment: Alignment.center,
                         child: Text(
                           e.toString(),
@@ -83,7 +83,7 @@ class DetailsPage extends ConsumerWidget {
                         ),
                       );
                     },
-                    orElse: () => CircularProgressIndicator(),
+                    orElse: () => const CircularProgressIndicator(),
                   ),
                 ),
                 Positioned(
@@ -92,7 +92,7 @@ class DetailsPage extends ConsumerWidget {
                     height: context.height / 2,
                     width: context.width,
                     padding: const EdgeInsets.only(left: 45, top: 20),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xff14141C),
                     ),
                     child: isSuccessful
@@ -102,20 +102,20 @@ class DetailsPage extends ConsumerWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  CircleAvatar(
+                                  const CircleAvatar(
                                     radius: 10,
                                     backgroundColor: Colors.white,
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Text(
                                     "Weather Details",
                                     style: bigTitleStyle.copyWith(fontSize: 16),
                                   )
                                 ],
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               weatherState.maybeWhen(
-                                loading: () => Center(
+                                loading: () => const Center(
                                   child: CircularProgressIndicator(),
                                 ),
                                 data: (WeatherData weatherData) =>

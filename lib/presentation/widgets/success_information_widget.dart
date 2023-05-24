@@ -43,11 +43,11 @@ class BuildSuccessInformation extends StatelessWidget {
           style: bigTitleStyle.copyWith(fontSize: 16),
         ),
         Text(
-          data.temp.toString() + "°",
+          "${data.temp}°",
           style: bigTitleStyle.copyWith(fontSize: 100),
         ),
         Text(
-          "Feels Like : " + data.feelsLike.toString() + "°",
+          "Feels Like : ${data.feelsLike}°",
           style: bigTitleStyle.copyWith(fontSize: 16),
         )
         //

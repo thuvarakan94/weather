@@ -20,18 +20,19 @@ class BuildSucessLocation extends ConsumerWidget {
         Text(cityName, style: bigTitleStyle.copyWith(fontSize: 25)),
         const SizedBox(height: 20),
         ElevatedButton(
-          child: Text(
-            'Tap to see more!',
-            style: TextStyle(color: Colors.white54),
-          ),
           onPressed: () {
             ref.read(cityNameProvider.notifier).state = cityName;
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              context.router.push(DetailsPageRoute());
+              context.router.push(const DetailsPageRoute());
             });
           },
           style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white10, padding: EdgeInsets.all(15)),
+              backgroundColor: Colors.white10,
+              padding: const EdgeInsets.all(15)),
+          child: const Text(
+            'Tap to see more!',
+            style: TextStyle(color: Colors.white54),
+          ),
         ),
       ],
     );

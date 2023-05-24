@@ -43,8 +43,8 @@ class DioService {
       // print(response.data);
       return response.data as JSON;
     } on Exception catch (ex) {
-      print('********EX*********');
-      print(ex.toString());
+      // print('********EX*********');
+      // print(ex.toString());
       throw NetworkException.getDioException(ex);
     }
   }

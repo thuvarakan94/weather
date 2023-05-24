@@ -20,6 +20,7 @@ class DetailBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
+      color: color,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -38,7 +39,7 @@ class DetailBlock extends StatelessWidget {
                 style: weatherDetailsTextStyle.copyWith(
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(width: 5),
+              const SizedBox(width: 5),
               Text(
                 unit ?? "",
                 style: weatherDetailsTextStyle.copyWith(fontSize: 12),
@@ -47,7 +48,6 @@ class DetailBlock extends StatelessWidget {
           ),
         ],
       ),
-      color: color,
     );
   }
 }
